@@ -1,0 +1,11 @@
+# Dependências e build
+node_modules
+dist
+
+# Binários baixados (não versionar)
+tools/cloudflared.exe
+
+# Logs e sistema
+*.log
+.DS_Store
+Thumbs.db
