@@ -27,6 +27,7 @@ export function Header({ onLoginClick, loggedUser, onLogout }: HeaderProps) {
           <a href="#inicio">Início</a>
           <a href="#categorias">Categorias</a>
           <a href="#destaques">Destaques</a>
+          <a href="#portfolio">Portfólio</a>
           <a href="#matricula">Matrícula</a>
         </nav>
 

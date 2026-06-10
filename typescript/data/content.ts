@@ -5,6 +5,28 @@ export const SLOGAN = 'Seu portal, sua vibe, seu hype.'
 /** Site externo aberto ao clicar no globo do Hero — troque a URL aqui. */
 export const GLOBE_LINK = 'https://www.google.com'
 
+/** Destino do botão Portfólio: rola até a seção interna de trabalhos e parcerias. */
+export const PORTFOLIO_LINK = '#portfolio'
+
+export interface CarouselSlide {
+  image: string
+  title: string
+  caption: string
+}
+
+/** Fotos exibidas no carrossel acima do Hero. */
+export const CAROUSEL_SLIDES: CarouselSlide[] = [
+  { image: '/carousel-1.png', title: 'Banco Yona', caption: 'Banco digital — jornada e produtos' },
+  { image: '/carousel-2.png', title: 'Padocafé', caption: 'Padaria artesanal e café especial' },
+  { image: '/carousel-3.png', title: 'Colégio Hiperativo', caption: 'Educação que transforma' },
+  { image: '/carousel-4.png', title: 'Saúde Mais', caption: 'Planos de saúde com cuidado 24h' },
+  { image: '/carousel-5.png', title: 'Up Service Tech', caption: 'Crédito pessoal com agilidade' },
+  { image: '/carousel-6.png', title: 'BetShow', caption: 'Dados reais rumo à Copa 2026' },
+  { image: '/carousel-7.png', title: 'Mundo News', caption: 'Jornalismo independente em tempo real' },
+  { image: '/carousel-8.png', title: 'Baden Power Madeiras', caption: 'Madeira nobre com requinte' },
+  { image: '/carousel-9.png', title: 'Super Car', caption: 'Seminovos premium com potência refinada' },
+]
+
 export const CATEGORIES: Category[] = [
   { id: 'musica', emoji: '🎧', name: 'Música', caption: 'Lançamentos, charts e playlists' },
   { id: 'games', emoji: '🎮', name: 'Games', caption: 'Reviews, e-sports e novidades' },
