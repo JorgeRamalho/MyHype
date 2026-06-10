@@ -97,3 +97,16 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 - Cabeçalhos dos três blocos do portfólio também centralizados
 - Exceção preservada: na **Matrícula** o texto segue alinhado à esquerda,
   ao lado do formulário
+
+## [1.2.0] — 2026-06-10
+
+### Fase 12 — Matrícula no topo com hero integrado
+
+- Seção de **matrícula movida para o topo** da página, acima do carrossel
+  e do portfólio
+- Conteúdo do **Hero integrado à coluna esquerda** da matrícula: slogan,
+  título "Tudo que está bombando", botões de ação e estatísticas (120k+ /
+  6 / 24/7), com o formulário ocupando toda a altura da coluna direita
+- Componente `Hero.tsx` removido — conteúdo consolidado em `EnrollSection`
+- **Refinamentos visuais**: linha divisória acima do slogan removida e
+  globo retirado do bloco integrado (mantido apenas no cabeçalho)
