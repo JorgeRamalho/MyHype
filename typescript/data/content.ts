@@ -2,8 +2,8 @@ import type { Category, TrendItem } from '@/types'
 
 export const SLOGAN = 'Seu portal, sua vibe, seu hype.'
 
-/** Site externo aberto ao clicar no globo do Hero — troque a URL aqui. */
-export const GLOBE_LINK = 'https://www.google.com'
+/** Destino do globo no Hero: rola até a seção de Portfólio do próprio site. */
+export const GLOBE_LINK = '#portfolio'
 
 /** Destino do botão Portfólio: rola até a seção interna de trabalhos e parcerias. */
 export const PORTFOLIO_LINK = '#portfolio'
@@ -14,8 +14,8 @@ export interface CarouselSlide {
   caption: string
 }
 
-/** Fotos exibidas no carrossel acima do Hero. */
-export const CAROUSEL_SLIDES: CarouselSlide[] = [
+/** Parcerias exibidas na seção Portfólio & Parcerias. */
+export const PORTFOLIO_SLIDES: CarouselSlide[] = [
   { image: '/carousel-1.png', title: 'Banco Yona', caption: 'Banco digital — jornada e produtos' },
   { image: '/carousel-2.png', title: 'Padocafé', caption: 'Padaria artesanal e café especial' },
   { image: '/carousel-3.png', title: 'Colégio Hiperativo', caption: 'Educação que transforma' },
@@ -25,6 +25,22 @@ export const CAROUSEL_SLIDES: CarouselSlide[] = [
   { image: '/carousel-7.png', title: 'Mundo News', caption: 'Jornalismo independente em tempo real' },
   { image: '/carousel-8.png', title: 'Baden Power Madeiras', caption: 'Madeira nobre com requinte' },
   { image: '/carousel-9.png', title: 'Super Car', caption: 'Seminovos premium com potência refinada' },
+]
+
+/** Novos projetos exibidos no carrossel e no segundo bloco do Portfólio. */
+export const CAROUSEL_ONLY_SLIDES: CarouselSlide[] = [
+  { image: '/carousel-10.png', title: 'Point Celular', caption: 'Nova era mobile — smartphones e acessórios tech' },
+  { image: '/carousel-11.png', title: 'Auto Layout Lab', caption: 'Figma Auto Layout vivo no navegador' },
+  { image: '/carousel-12.png', title: 'MyNotebook', caption: 'Anúncios premium — ultrabooks e tecnologia' },
+  { image: '/carousel-13.png', title: 'Game Book', caption: 'Onde cada save vira história — retro gaming' },
+  { image: '/carousel-14.png', title: 'ArtMusic', caption: 'O som que define você — instrumentos premium' },
+  { image: '/carousel-15.png', title: 'Distribar', caption: 'Bebidas que animam qualquer momento — sua distribuidora de confiança' },
+]
+
+/** Todas as fotos do carrossel acima do Hero (parcerias + novos projetos). */
+export const CAROUSEL_SLIDES: CarouselSlide[] = [
+  ...PORTFOLIO_SLIDES,
+  ...CAROUSEL_ONLY_SLIDES,
 ]
 
 export const CATEGORIES: Category[] = [
