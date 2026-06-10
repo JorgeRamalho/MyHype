@@ -8,56 +8,23 @@ export const GLOBE_LINK = 'https://www.google.com'
 /** Destino do botão Portfólio: rola até a seção interna de trabalhos e parcerias. */
 export const PORTFOLIO_LINK = '#portfolio'
 
-/** Trios do Portfólio: cada projeto pertence a um dos três grupos. */
-export type PortfolioGroupId = 'aplicacoes' | 'layout' | 'recursos'
-
 export interface CarouselSlide {
   image: string
   title: string
   caption: string
-  group: PortfolioGroupId
 }
 
 /** Fotos exibidas no carrossel acima do Hero. */
 export const CAROUSEL_SLIDES: CarouselSlide[] = [
-  { image: '/carousel-1.png', title: 'Banco Yona', caption: 'Banco digital — jornada e produtos', group: 'aplicacoes' },
-  { image: '/carousel-2.png', title: 'Padocafé', caption: 'Padaria artesanal e café especial', group: 'layout' },
-  { image: '/carousel-3.png', title: 'Colégio Hiperativo', caption: 'Educação que transforma', group: 'recursos' },
-  { image: '/carousel-4.png', title: 'Saúde Mais', caption: 'Planos de saúde com cuidado 24h', group: 'aplicacoes' },
-  { image: '/carousel-5.png', title: 'Up Service Tech', caption: 'Crédito pessoal com agilidade', group: 'aplicacoes' },
-  { image: '/carousel-6.png', title: 'BetShow', caption: 'Dados reais rumo à Copa 2026', group: 'recursos' },
-  { image: '/carousel-7.png', title: 'Mundo News', caption: 'Jornalismo independente em tempo real', group: 'recursos' },
-  { image: '/carousel-8.png', title: 'Baden Power Madeiras', caption: 'Madeira nobre com requinte', group: 'layout' },
-  { image: '/carousel-9.png', title: 'Super Car', caption: 'Seminovos premium com potência refinada', group: 'layout' },
-]
-
-export interface PortfolioGroup {
-  id: PortfolioGroupId
-  icon: string
-  title: string
-  description: string
-}
-
-/** Os três trios da seção Portfólio & Parcerias, separados entre si. */
-export const PORTFOLIO_GROUPS: PortfolioGroup[] = [
-  {
-    id: 'aplicacoes',
-    icon: '💎',
-    title: 'Aplicações Sofisticadas',
-    description: 'Produtos digitais completos, com jornadas inteligentes e experiência refinada.',
-  },
-  {
-    id: 'layout',
-    icon: '🎨',
-    title: 'Layout Marcante',
-    description: 'Identidades visuais fortes que traduzem a personalidade de cada marca.',
-  },
-  {
-    id: 'recursos',
-    icon: '⚙️',
-    title: 'Recursos Tecnológicos',
-    description: 'Soluções com tecnologia de ponta: dados em tempo real, interatividade e performance.',
-  },
+  { image: '/carousel-1.png', title: 'Banco Yona', caption: 'Banco digital — jornada e produtos' },
+  { image: '/carousel-2.png', title: 'Padocafé', caption: 'Padaria artesanal e café especial' },
+  { image: '/carousel-3.png', title: 'Colégio Hiperativo', caption: 'Educação que transforma' },
+  { image: '/carousel-4.png', title: 'Saúde Mais', caption: 'Planos de saúde com cuidado 24h' },
+  { image: '/carousel-5.png', title: 'Up Service Tech', caption: 'Crédito pessoal com agilidade' },
+  { image: '/carousel-6.png', title: 'BetShow', caption: 'Dados reais rumo à Copa 2026' },
+  { image: '/carousel-7.png', title: 'Mundo News', caption: 'Jornalismo independente em tempo real' },
+  { image: '/carousel-8.png', title: 'Baden Power Madeiras', caption: 'Madeira nobre com requinte' },
+  { image: '/carousel-9.png', title: 'Super Car', caption: 'Seminovos premium com potência refinada' },
 ]
 
 export const CATEGORIES: Category[] = [

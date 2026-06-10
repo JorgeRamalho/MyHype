@@ -140,14 +140,9 @@ export function EnrollmentForm({ onRegister }: EnrollmentFormProps) {
   return (
     <form className="form-card" onSubmit={handleSubmit} noValidate>
       <h3>Formulário de matrícula</h3>
-      <p>
-        Preencha as quatro etapas abaixo para criar sua conta. Ao confirmar, seu
-        número de matrícula é gerado na hora — sem fila, sem espera.
-      </p>
+      <p>Preencha seus dados básicos para criar sua conta e gerar sua matrícula.</p>
 
       <div className="form-grid">
-        <span className="form-legend">1 · Dados pessoais</span>
-
         <div className="field full">
           <label htmlFor="fullName">Nome completo *</label>
           <input
@@ -174,7 +169,6 @@ export function EnrollmentForm({ onRegister }: EnrollmentFormProps) {
             className={errors.birthDate ? 'invalid' : ''}
             autoComplete="bday"
           />
-          <span className="field-hint">É preciso ter 13 anos ou mais.</span>
           <span className="field-error">{errors.birthDate}</span>
         </div>
 
@@ -190,11 +184,8 @@ export function EnrollmentForm({ onRegister }: EnrollmentFormProps) {
             onChange={handleChange}
             className={errors.cpf ? 'invalid' : ''}
           />
-          <span className="field-hint">Digite só os números — os pontos entram sozinhos.</span>
           <span className="field-error">{errors.cpf}</span>
         </div>
-
-        <span className="form-legend">2 · Contato</span>
 
         <div className="field">
           <label htmlFor="email">E-mail *</label>
@@ -208,7 +199,6 @@ export function EnrollmentForm({ onRegister }: EnrollmentFormProps) {
             className={errors.email ? 'invalid' : ''}
             autoComplete="email"
           />
-          <span className="field-hint">É para onde enviamos sua confirmação de matrícula.</span>
           <span className="field-error">{errors.email}</span>
         </div>
 
@@ -225,11 +215,8 @@ export function EnrollmentForm({ onRegister }: EnrollmentFormProps) {
             className={errors.phone ? 'invalid' : ''}
             autoComplete="tel"
           />
-          <span className="field-hint">DDD + número. Avisos de hype direto no seu WhatsApp.</span>
           <span className="field-error">{errors.phone}</span>
         </div>
-
-        <span className="form-legend">3 · Onde você está</span>
 
         <div className="field">
           <label htmlFor="cep">CEP *</label>
@@ -244,7 +231,6 @@ export function EnrollmentForm({ onRegister }: EnrollmentFormProps) {
             className={errors.cep ? 'invalid' : ''}
             autoComplete="postal-code"
           />
-          <span className="field-hint">Usado para destacar eventos e drops da sua região.</span>
           <span className="field-error">{errors.cep}</span>
         </div>
 
@@ -280,8 +266,6 @@ export function EnrollmentForm({ onRegister }: EnrollmentFormProps) {
           <span className="field-error">{errors.state}</span>
         </div>
 
-        <span className="form-legend">4 · Sua vibe e seu acesso</span>
-
         <div className="field">
           <label htmlFor="interest">Interesse principal *</label>
           <select
@@ -296,7 +280,6 @@ export function EnrollmentForm({ onRegister }: EnrollmentFormProps) {
               <option key={opt} value={opt}>{opt}</option>
             ))}
           </select>
-          <span className="field-hint">Define o que aparece primeiro no seu feed.</span>
           <span className="field-error">{errors.interest}</span>
         </div>
 
@@ -328,7 +311,7 @@ export function EnrollmentForm({ onRegister }: EnrollmentFormProps) {
               />
             ))}
           </div>
-          <span className="field-hint">Mínimo 8 caracteres, com maiúscula, número e símbolo.</span>
+          <span className="field-hint">Use maiúscula, número e símbolo.</span>
           <span className="field-error">{errors.password}</span>
         </div>
 
