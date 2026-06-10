@@ -226,18 +226,22 @@ section {
   border-bottom: 1px solid rgba(59, 45, 99, 0.5);
 }
 
+/* Grade de 3 colunas: marca | navegação centralizada | ações
+   Todos os elementos centralizados verticalmente na mesma linha. */
 .header-inner {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: space-between;
   gap: var(--space-4);
   padding-block: var(--space-3);
+  min-height: 64px;
 }
 
 .brand {
   display: flex;
   align-items: center;
   gap: var(--space-3);
+  line-height: 1;
 }
 
 /* Selo da logomarca: anel azul + brilho suave ao redor do globo */
@@ -275,6 +279,7 @@ section {
   font-family: var(--font-heading);
   font-weight: 800;
   font-size: var(--text-xl);
+  line-height: 1;
   color: #ffffff;
 }
 
@@ -283,21 +288,188 @@ section {
 }
 
 .nav {
+  justify-self: center;
   display: flex;
-  gap: var(--space-6);
+  align-items: center;
+  gap: var(--space-2);
   font-size: var(--text-sm);
   font-weight: 500;
   color: var(--color-text-muted);
 }
 
+/* Links com a mesma altura dos botões (alinhamento exato na vertical) */
+.nav a {
+  display: inline-flex;
+  align-items: center;
+  height: 38px;
+  padding-inline: var(--space-3);
+  border-radius: var(--radius-full);
+  line-height: 1;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
 .nav a:hover {
   color: var(--color-text);
+  background: rgba(124, 58, 237, 0.15);
 }
 
 .header-actions {
+  justify-self: end;
   display: flex;
-  gap: var(--space-3);
   align-items: center;
+  gap: var(--space-3);
+}
+
+.header-actions .btn {
+  height: 38px;
+  align-items: center;
+}
+
+/* ============ Carrossel (acima do Hero) ============ */
+.carousel {
+  padding-block: var(--space-8) var(--space-16);
+}
+
+/* Moldura mais larga que o container padrão: o carrossel domina a dobra */
+.carousel .container {
+  width: min(1400px, 96vw);
+}
+
+.carousel-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.carousel-slide {
+  position: relative;
+  flex: 0 0 100%;
+  margin: 0;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: clamp(360px, 58vw, 660px);
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.carousel-caption {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--space-6) var(--space-6) var(--space-8);
+  background: linear-gradient(180deg, transparent 0%, rgba(6, 4, 16, 0.88) 78%);
+}
+
+.carousel-caption strong {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  color: #fff;
+}
+
+.carousel-caption span {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  display: grid;
+  place-items: center;
+  font-size: 1.8rem;
+  line-height: 1;
+  color: #fff;
+  background: rgba(15, 11, 30, 0.6);
+  border: 1px solid var(--color-border);
+  backdrop-filter: blur(6px);
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.carousel-arrow:hover {
+  background: var(--color-primary);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.carousel-arrow.prev { left: var(--space-4); }
+.carousel-arrow.next { right: var(--space-4); }
+
+.carousel-dots {
+  position: absolute;
+  inset-inline: 0;
+  bottom: var(--space-3);
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.carousel-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.35);
+  transition: background 0.2s ease, width 0.2s ease;
+}
+
+.carousel-dots .dot.active {
+  width: 26px;
+  background: var(--gradient-hype);
+}
+
+/* Botão Portfólio: pulso de brilho + flutuação lenta para chamar atenção */
+.carousel-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-8);
+}
+
+.btn-portfolio {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  padding: 1rem 2.6rem;
+  letter-spacing: 0.04em;
+  animation:
+    portfolio-float 4s ease-in-out infinite,
+    portfolio-pulse 2.2s ease-in-out infinite;
+}
+
+.btn-portfolio:hover {
+  animation-play-state: paused;
+  transform: translateY(-4px) scale(1.06);
+}
+
+@keyframes portfolio-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes portfolio-pulse {
+  0%, 100% { box-shadow: 0 0 24px rgba(124, 58, 237, 0.45); }
+  50% { box-shadow: 0 0 52px rgba(236, 72, 153, 0.75), 0 0 90px rgba(245, 158, 11, 0.35); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-portfolio {
+    animation: none;
+  }
 }
 
 /* ============ Hero ============ */
@@ -579,6 +751,73 @@ section {
   color: var(--color-text-caption);
   border-top: 1px solid var(--color-border);
   padding-top: var(--space-3);
+}
+
+/* ============ Portfólio & Parcerias ============ */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-6);
+}
+
+.portfolio-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-card), 0 0 32px rgba(124, 58, 237, 0.25);
+}
+
+.portfolio-cover {
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.portfolio-cover img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.35s ease;
+}
+
+.portfolio-card:hover .portfolio-cover img {
+  transform: scale(1.06);
+}
+
+.portfolio-body {
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.portfolio-body h3 {
+  font-size: var(--text-lg);
+}
+
+.portfolio-body p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.portfolio-badge {
+  align-self: flex-start;
+  margin-top: var(--space-2);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius-full);
+  background: rgba(34, 211, 238, 0.14);
+  color: var(--color-cyan);
 }
 
 /* ============ Formulário de Matrícula ============ */
