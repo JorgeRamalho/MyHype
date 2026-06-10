@@ -42,11 +42,9 @@ export function Hero() {
         <div className="hero-art">
           <a
             href={GLOBE_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
             className="hero-globe-link"
-            title="Clique para visitar o site"
-            aria-label="Visitar site externo"
+            title="Ver portfólio e parcerias"
+            aria-label="Ir para o portfólio do My Hype"
           >
             <img
               src="/logo-globe.png"

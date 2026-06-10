@@ -12,8 +12,8 @@ export function Footer() {
                   src="/logo-globe.png"
                   alt="Logomarca My Hype: globo terrestre"
                   className="brand-logo"
-                  width={36}
-                  height={36}
+                  width={32}
+                  height={32}
                 />
               </span>
               <span className="brand-name">

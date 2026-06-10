@@ -14,8 +14,8 @@ export function Header({ onLoginClick, loggedUser, onLogout }: HeaderProps) {
               src="/logo-globe.png"
               alt="Logomarca My Hype: globo terrestre"
               className="brand-logo"
-              width={42}
-              height={42}
+              width={36}
+              height={36}
             />
           </span>
           <span className="brand-name">
