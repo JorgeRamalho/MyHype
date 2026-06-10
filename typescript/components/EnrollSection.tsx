@@ -10,30 +10,32 @@ export function EnrollSection({ onRegister }: EnrollSectionProps) {
     <section className="enroll" id="matricula">
       <div className="container enroll-grid">
         <div className="enroll-info">
-          <span className="section-tag">Matrícula</span>
+          <span className="section-tag">Matrícula gratuita</span>
           <h2 className="section-title">
-            Entre para a <span className="text-gradient">comunidade</span>
+            Entre para a <span className="text-gradient">comunidade</span> que
+            vive o hype primeiro
           </h2>
           <p className="section-subtitle">
-            A matrícula é gratuita e leva menos de 2 minutos. Com ela, você
-            desbloqueia tudo que o portal oferece.
+            A matrícula é 100% gratuita e leva menos de 2 minutos. Com ela, você
+            desbloqueia todo o conteúdo do portal e ganha sua identidade oficial
+            na comunidade My Hype.
           </p>
           <ul>
             <li>
               <span aria-hidden="true">🎯</span>
-              <span><strong>Feed personalizado</strong> — conteúdo com base nos seus interesses.</span>
+              <span><strong>Feed personalizado</strong> — música, games, cinema, moda, tech: você escolhe o que vem primeiro.</span>
             </li>
             <li>
               <span aria-hidden="true">🔔</span>
-              <span><strong>Alertas de hype</strong> — avisos de drops, estreias e lançamentos.</span>
+              <span><strong>Alertas de hype</strong> — drops, estreias e lançamentos avisados antes de bombar.</span>
             </li>
             <li>
               <span aria-hidden="true">💬</span>
-              <span><strong>Comunidade</strong> — comente, vote e converse com outros membros.</span>
+              <span><strong>Comunidade ativa</strong> — comente, vote nas tendências e converse com quem vive a mesma vibe.</span>
             </li>
             <li>
               <span aria-hidden="true">🎟️</span>
-              <span><strong>Número de matrícula</strong> — sua identidade única no portal, gerada na hora.</span>
+              <span><strong>Número de matrícula exclusivo</strong> — sua identidade única no portal, gerada na hora da confirmação.</span>
             </li>
           </ul>
         </div>
