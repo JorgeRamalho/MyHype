@@ -61,6 +61,67 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 
 ### Fase 7 — Interatividade do globo
 
-- Globo do Hero transformado em **link externo** (nova aba, `noopener`),
-  com feedback visual de hover e foco acessível por teclado
-- URL de destino centralizada em `typescript/data/content.ts` (`GLOBE_LINK`)
+- Globo do Hero transformado em **link** com feedback visual de hover e foco
+  acessível por teclado; URL centralizada em `GLOBE_LINK`
+
+## [1.1.0] — 2026-06-10
+
+### Fase 8 — Portfólio & Parcerias em três blocos
+
+- Seção reorganizada em três blocos individuais: *Aplicações Sofisticadas*,
+  *Layout Marcante* e *Recursos Tecnológicos*
+- Projetos classificados em `PORTFOLIO_GROUPS`
+
+### Fase 9 — Conteúdo do formulário de matrícula
+
+- Títulos, textos e legendas ajustados em `EnrollSection` e `EnrollmentForm`
+
+### Fase 10 — Correção do servidor de desenvolvimento
+
+- Fix no `vite.config.ts` para `main.tsx` fora da raiz do Vite (plugin `/@fs/`)
+
+### Fase 11 — Centralização dos títulos de seção
+
+- Cabeçalhos de Destaques, Categorias e Portfólio centralizados
+
+> **Nota:** versões 1.1.0 e 1.2.0 foram revertidas da `main` no commit `6461870`
+> a pedido do usuário; o histórico permanece registrado nesta branch.
+
+## [1.2.0] — 2026-06-10
+
+### Fase 12 — Matrícula no topo com hero integrado
+
+- Matrícula movida para o topo; hero integrado na coluna esquerda do formulário
+- Componente `Hero.tsx` removido (conteúdo em `EnrollSection`)
+- Refinamentos: sem linha divisória e sem globo no bloco integrado
+
+## [1.3.0] — 2026-06-10
+
+### Fase 13 — Expansão do carrossel e portfólio
+
+- **6 novos projetos** adicionados: Point Celular, Auto Layout Lab, MyNotebook,
+  Game Book, ArtMusic e Distribar (`carousel-10` a `carousel-15`)
+- Dados separados em `PORTFOLIO_SLIDES` (9 parcerias) e `CAROUSEL_ONLY_SLIDES`
+  (6 novos); carrossel com 15 slides no total
+- Portfólio em **grid unificado** com Distribar em **posição aleatória** a cada
+  carregamento
+
+### Fase 14 — Globo do Hero → Portfólio interno
+
+- `GLOBE_LINK` alterado de Google para `#portfolio` (navegação interna)
+- Removidos `target="_blank"` e `rel="noopener"` do link do globo
+
+### Fase 15 — Correção do dev server (reaplicada)
+
+- Plugin dev-only no `vite.config.ts` reaplicado após revert da sessão anterior
+
+### Fase 16 — Logomarca responsiva no header
+
+- Variáveis CSS `--brand-logo-size`, `--brand-name-size` e `--brand-ring`
+- `object-fit: contain` no globo; escala proporcional em tablet e mobile
+- Header em 2 colunas quando o menu some (≤ 900px)
+
+### Fase 17 — Texto da matrícula centralizado
+
+- Coluna `enroll-info` centralizada na metade esquerda (`justify-self: center`)
+- Grid da matrícula equilibrado em `1fr / 1fr`
