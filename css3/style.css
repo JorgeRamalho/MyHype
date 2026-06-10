@@ -75,6 +75,11 @@
   --shadow-glow: 0 0 40px rgba(124, 58, 237, 0.35);
   --shadow-card: 0 12px 32px rgba(0, 0, 0, 0.4);
   --container: 1180px;
+
+  /* Logomarca: globo + texto proporcionais em todas as telas */
+  --brand-logo-size: 36px;
+  --brand-ring: 3px;
+  --brand-name-size: 1.25rem;
 }
 
 /* ============ Reset ============ */
@@ -242,17 +247,23 @@ section {
   align-items: center;
   gap: var(--space-3);
   line-height: 1;
+  flex-shrink: 0;
+  min-width: 0;
 }
 
-/* Selo da logomarca: anel azul + brilho suave ao redor do globo */
+/* Selo da logomarca: anel azul com globo proporcional dentro */
 .brand-badge {
   display: inline-grid;
   place-items: center;
-  padding: 3px;
+  flex-shrink: 0;
+  width: calc(var(--brand-logo-size) + var(--brand-ring) * 2);
+  height: calc(var(--brand-logo-size) + var(--brand-ring) * 2);
+  padding: var(--brand-ring);
   border-radius: var(--radius-full);
   background: #2563eb;
   box-shadow: 0 0 18px rgba(37, 99, 235, 0.45);
   transition: box-shadow 0.2s ease, transform 0.2s ease;
+  box-sizing: border-box;
 }
 
 .brand:hover .brand-badge {
@@ -262,25 +273,27 @@ section {
 
 .brand-logo {
   display: block;
-  width: 42px;
-  height: 42px;
+  width: var(--brand-logo-size);
+  height: var(--brand-logo-size);
   border-radius: var(--radius-full);
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
   background: #f5f3ff;
   image-rendering: auto;
 }
 
-.brand-badge-sm .brand-logo {
-  width: 36px;
-  height: 36px;
+.brand-badge-sm {
+  --brand-logo-size: 32px;
+  --brand-ring: 2px;
 }
 
 .brand-name {
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: var(--text-xl);
+  font-size: var(--brand-name-size);
   line-height: 1;
   color: #ffffff;
+  white-space: nowrap;
 }
 
 .brand-name span {
@@ -754,6 +767,25 @@ section {
 }
 
 /* ============ Portfólio & Parcerias ============ */
+/* Fieldset para categorias do portfólio */
+.portfolio-fieldset {
+  border: none;
+  padding: 0;
+  margin-bottom: var(--space-8);
+}
+
+.portfolio-legend {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-cyan);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-6);
+  padding: 0;
+}
+
+
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -828,9 +860,21 @@ section {
 
 .enroll-grid {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-columns: 1fr 1fr;
   gap: var(--space-12);
-  align-items: start;
+  align-items: center;
+}
+
+/* Texto centralizado na metade esquerda, alinhado ao eixo do site. */
+.enroll-info {
+  justify-self: center;
+  width: 100%;
+  max-width: 420px;
+}
+
+.enroll-info .section-subtitle {
+  max-width: none;
+  margin-bottom: var(--space-6);
 }
 
 .enroll-info ul {
@@ -1131,6 +1175,16 @@ section {
 
 /* ============ Responsivo ============ */
 @media (max-width: 900px) {
+  :root {
+    --brand-logo-size: 32px;
+    --brand-name-size: 1.125rem;
+  }
+
+  .header-inner {
+    grid-template-columns: 1fr auto;
+    gap: var(--space-3);
+  }
+
   .hero-grid,
   .enroll-grid {
     grid-template-columns: 1fr;
@@ -1146,6 +1200,30 @@ section {
 }
 
 @media (max-width: 560px) {
+  :root {
+    --brand-logo-size: 28px;
+    --brand-name-size: 1rem;
+    --brand-ring: 2px;
+  }
+
+  .header-inner {
+    min-height: 56px;
+    padding-block: var(--space-2);
+  }
+
+  .brand {
+    gap: var(--space-2);
+  }
+
+  .header-actions {
+    gap: var(--space-2);
+  }
+
+  .header-actions .btn-sm {
+    padding: 0.5rem 0.85rem;
+    font-size: var(--text-xs);
+  }
+
   .form-grid {
     grid-template-columns: 1fr;
   }
