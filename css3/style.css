@@ -940,6 +940,15 @@ section {
   color: var(--color-text);
 }
 
+/* Hero dentro da coluna esquerda da matrícula: o formulário acompanha a altura. */
+.enroll-hero {
+  margin-top: var(--space-12);
+}
+
+.enroll-hero .hero-title {
+  font-size: clamp(var(--text-2xl), 4.5vw, var(--text-4xl));
+}
+
 .form-card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
