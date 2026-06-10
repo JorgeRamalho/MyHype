@@ -8,6 +8,7 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
+    "html": "vite build",
     "tunnel": "tools\\cloudflared.exe tunnel --url http://localhost:4173"
   },
   "dependencies": {
