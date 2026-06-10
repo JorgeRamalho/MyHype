@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import type { RegisteredUser } from '@/types'
 import { Header } from '@/components/Header'
 import { Carousel } from '@/components/Carousel'
-import { Hero } from '@/components/Hero'
 import { Categories } from '@/components/Categories'
 import { Trending } from '@/components/Trending'
 import { Portfolio } from '@/components/Portfolio'
@@ -61,12 +60,11 @@ export default function App() {
         onLogout={handleLogout}
       />
       <main>
+        <EnrollSection onRegister={handleRegister} />
         <Carousel />
-        <Hero />
         <Categories />
         <Trending />
         <Portfolio />
-        <EnrollSection onRegister={handleRegister} />
       </main>
       <Footer />
 
