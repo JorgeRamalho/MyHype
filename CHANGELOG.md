@@ -64,3 +64,36 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 - Globo do Hero transformado em **link externo** (nova aba, `noopener`),
   com feedback visual de hover e foco acessível por teclado
 - URL de destino centralizada em `typescript/data/content.ts` (`GLOBE_LINK`)
+
+## [1.1.0] — 2026-06-10
+
+### Fase 8 — Portfólio & Parcerias em três blocos
+
+- Seção **Portfólio & Parcerias** reorganizada em **três blocos individuais**,
+  cada um com cor de identidade própria na borda, ícone com glow e cabeçalho:
+  💎 *Aplicações Sofisticadas* (violeta), 🎨 *Layout Marcante* (magenta) e
+  ⚙️ *Recursos Tecnológicos* (ciano)
+- Cada projeto do carrossel classificado em um dos três grupos
+  (`PORTFOLIO_GROUPS` em `typescript/data/content.ts`)
+
+### Fase 9 — Conteúdo do formulário de matrícula
+
+- **Preenchimento de conteúdo** do formulário: títulos, textos e legendas
+  ajustados em `EnrollSection` e `EnrollmentForm`, com benefícios da
+  comunidade (feed personalizado, alertas de hype, comunidade ativa e
+  número de matrícula exclusivo)
+
+### Fase 10 — Correção do servidor de desenvolvimento
+
+- **Fix no `vite.config.ts`**: o `index.html` (raiz `html5/`) importa
+  `../typescript/main.tsx`, fora da raiz do Vite; a URL colapsava para
+  `/typescript/main.tsx` e a página ficava em branco. Plugin dev-only
+  reescreve o entry para o caminho absoluto `/@fs/`
+
+### Fase 11 — Centralização dos títulos de seção
+
+- Cabeçalhos das seções **Destaques**, **Categorias** e **Portfólio &
+  Parcerias** (tag, título e subtítulo) centralizados ao meio da página
+- Cabeçalhos dos três blocos do portfólio também centralizados
+- Exceção preservada: na **Matrícula** o texto segue alinhado à esquerda,
+  ao lado do formulário
