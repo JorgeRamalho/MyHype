@@ -1,3 +1,5 @@
+import { publicAsset } from '@/utils/publicAsset'
+
 interface HeaderProps {
   onLoginClick: () => void
   loggedUser: string | null
@@ -11,7 +13,7 @@ export function Header({ onLoginClick, loggedUser, onLogout }: HeaderProps) {
         <a href="#inicio" className="brand">
           <span className="brand-badge">
             <img
-              src="/logo-globe.png"
+              src={publicAsset('/logo-globe.png')}
               alt="Logomarca My Hype: globo terrestre"
               className="brand-logo"
               width={36}

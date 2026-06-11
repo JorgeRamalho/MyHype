@@ -1,4 +1,5 @@
 import { SLOGAN, GLOBE_LINK } from '@/data/content'
+import { publicAsset } from '@/utils/publicAsset'
 
 export function Hero() {
   return (
@@ -47,7 +48,7 @@ export function Hero() {
             aria-label="Ir para o portfólio do My Hype"
           >
             <img
-              src="/logo-globe.png"
+              src={publicAsset('/logo-globe.png')}
               alt="Logomarca My Hype: globo terrestre"
               className="hero-globe"
               loading="eager"

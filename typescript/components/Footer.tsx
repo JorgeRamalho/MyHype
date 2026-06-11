@@ -1,4 +1,5 @@
 import { SLOGAN } from '@/data/content'
+import { publicAsset } from '@/utils/publicAsset'
 
 export function Footer() {
   return (
@@ -9,7 +10,7 @@ export function Footer() {
             <a href="#inicio" className="brand">
               <span className="brand-badge brand-badge-sm">
                 <img
-                  src="/logo-globe.png"
+                  src={publicAsset('/logo-globe.png')}
                   alt="Logomarca My Hype: globo terrestre"
                   className="brand-logo"
                   width={32}
