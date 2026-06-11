@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { CAROUSEL_SLIDES, PORTFOLIO_LINK } from '@/data/content'
+import { publicAsset } from '@/utils/publicAsset'
 
 const AUTOPLAY_MS = 5000
 
@@ -33,23 +34,46 @@ export function Carousel() {
             className="carousel-track"
             style={{ transform: `translateX(-${current * 100}%)` }}
           >
-            {CAROUSEL_SLIDES.map((slide, i) => (
-              <figure
-                className="carousel-slide"
-                key={slide.image}
-                aria-hidden={i !== current}
-              >
-                <img
-                  src={slide.image}
-                  alt={slide.title}
-                  loading={i === 0 ? 'eager' : 'lazy'}
-                />
-                <figcaption className="carousel-caption">
-                  <strong>{slide.title}</strong>
-                  <span>{slide.caption}</span>
-                </figcaption>
-              </figure>
-            ))}
+            {CAROUSEL_SLIDES.map((slide, i) => {
+              const content = (
+                <>
+                  <img
+                    src={publicAsset(slide.image)}
+                    alt={slide.title}
+                    loading={i === 0 ? 'eager' : 'lazy'}
+                  />
+                  <figcaption className="carousel-caption">
+                    <strong>{slide.title}</strong>
+                    <span>{slide.caption}</span>
+                    {slide.href && (
+                      <span className="carousel-caption-link">Visitar site →</span>
+                    )}
+                  </figcaption>
+                </>
+              )
+
+              return (
+                <figure
+                  className="carousel-slide"
+                  key={slide.image}
+                  aria-hidden={i !== current}
+                >
+                  {slide.href ? (
+                    <a
+                      className="carousel-slide-link"
+                      href={slide.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Visitar site da ${slide.title}`}
+                    >
+                      {content}
+                    </a>
+                  ) : (
+                    content
+                  )}
+                </figure>
+              )
+            })}
           </div>
 
           <button
