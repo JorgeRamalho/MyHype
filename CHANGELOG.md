@@ -132,3 +132,42 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 - Header focado apenas na marca e ações do usuário (Entrar e Matricule-se)
 - **Arquivos starfield adicionados**: demo de fundo estrelado em HTML5 puro
   (`html5/starfield.css`, `html5/starfield.html`, `html5/starfield.js`)
+
+## [1.4.0] — 2026-06-11
+
+### Fase 19 — Validação HTML5 e Live Server
+
+- Correção de tags void (`<meta>`, `<link>`) em HTML5 nos arquivos do projeto
+- **`html5/index.html` acessível pelo Live Server**: carrega bundle de `dist/` via
+  `live-manifest.json` gerado no build; script `npm run live`
+- Utilitário **`publicAsset()`** para resolver imagens no Live Server (`../dist/`)
+  e no Vite dev/build (`/`)
+
+### Fase 20 — Portfólio em fieldsets nomeados
+
+- Seção reorganizada em **quatro grupos** com legendas: *Design Inovador*,
+  *Case de Sucesso*, *Office Business* e *Hi-Tech* (3 cards cada)
+- Removida a inserção aleatória da Distribar no grid unificado
+
+### Fase 21 — Favicon com globo terrestre
+
+- Favicon atualizado para o **globo My Hype** (SVG e PNG 32/64 px)
+- Removida moldura rosa do `favicon-32.png`; script `tools/crop-logo.ps1` ajustado
+- Asset `logo-globe-512.png` em alta resolução
+
+### Fase 22 — Carrossel com links externos
+
+- Slides clicáveis abrem o **site do parceiro** em nova aba (`href`, legenda
+  “Visitar site →”)
+- URLs públicas dos parceiros (Vercel e Netlify): Banco Yona, Padocafé,
+  Colégio Hiperativo, Saúde Mais, Up Service Tech, Mundo News, Baden Power,
+  Auto Layout Lab, MyNotebook, Game Book e Mercadolar
+
+### Fase 23 — Curadoria do carrossel
+
+- **Removidos** do carrossel e portfólio: BetShow, Super Car, Point Celular,
+  ArtMusic e Distribar (dados e imagens `carousel-6`, `9`, `10`, `14`, `15`)
+- **Adicionado** Mercadolar (`carousel-17.png`)
+- Auto Layout Lab restaurado com imagem e link público
+- Tentativa Locar+ revertida por solicitação do usuário
+- CategoryShowcase (fieldset entre Categorias e Destaques) criado e revertido
