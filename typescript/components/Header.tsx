@@ -23,14 +23,6 @@ export function Header({ onLoginClick, loggedUser, onLogout }: HeaderProps) {
           </span>
         </a>
 
-        <nav className="nav" aria-label="Navegação principal">
-          <a href="#inicio">Início</a>
-          <a href="#categorias">Categorias</a>
-          <a href="#destaques">Destaques</a>
-          <a href="#portfolio">Portfólio</a>
-          <a href="#matricula">Matrícula</a>
-        </nav>
-
         <div className="header-actions">
           {loggedUser ? (
             <>
