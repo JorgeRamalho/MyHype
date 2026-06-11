@@ -1,32 +1,53 @@
 import { useMemo } from 'react'
 import { CAROUSEL_ONLY_SLIDES, PORTFOLIO_SLIDES } from '@/data/content'
 import type { CarouselSlide } from '@/data/content'
+import { publicAsset } from '@/utils/publicAsset'
 
-const DISTRIBAR_IMAGE = '/carousel-15.png'
+const PORTFOLIO_GROUPS = [
+  'Design Inovador',
+  'Case de Sucesso',
+  'Office Business',
+  'Hi-Tech',
+] as const
+
+const GROUP_SIZE = 3
 
 type PortfolioWork = CarouselSlide & { badge: 'parceria' | 'destaque' }
 
-/** Insere a Distribar em uma posição aleatória entre todos os cards do portfólio. */
+function PortfolioCard({ work }: { work: PortfolioWork }) {
+  return (
+    <article className="portfolio-card">
+      <div className="portfolio-cover">
+        <img src={publicAsset(work.image)} alt={`Projeto ${work.title}`} loading="lazy" />
+      </div>
+      <div className="portfolio-body">
+        <h3>{work.title}</h3>
+        <p>{work.caption}</p>
+        <span className="portfolio-badge">
+          {work.badge === 'parceria' ? '🤝 Parceria' : '✨ Destaque'}
+        </span>
+      </div>
+    </article>
+  )
+}
+
+/** Monta os cards do portfólio em ordem fixa. */
 function buildPortfolioWorks(): PortfolioWork[] {
-  const distribar = CAROUSEL_ONLY_SLIDES.find((s) => s.image === DISTRIBAR_IMAGE)
-  const others: PortfolioWork[] = [
+  return [
     ...PORTFOLIO_SLIDES.map((s) => ({ ...s, badge: 'parceria' as const })),
-    ...CAROUSEL_ONLY_SLIDES.filter((s) => s.image !== DISTRIBAR_IMAGE).map((s) => ({
-      ...s,
-      badge: 'destaque' as const,
-    })),
+    ...CAROUSEL_ONLY_SLIDES.map((s) => ({ ...s, badge: 'destaque' as const })),
   ]
+}
 
-  if (!distribar) return others
-
-  const randomIndex = Math.floor(Math.random() * (others.length + 1))
-  const withDistribar: PortfolioWork[] = [...others]
-  withDistribar.splice(randomIndex, 0, { ...distribar, badge: 'destaque' })
-  return withDistribar
+function chunkPortfolioGroups(works: PortfolioWork[]) {
+  return PORTFOLIO_GROUPS.map((label, index) => ({
+    label,
+    works: works.slice(index * GROUP_SIZE, index * GROUP_SIZE + GROUP_SIZE),
+  })).filter((group) => group.works.length > 0)
 }
 
 export function Portfolio() {
-  const works = useMemo(() => buildPortfolioWorks(), [])
+  const groups = useMemo(() => chunkPortfolioGroups(buildPortfolioWorks()), [])
 
   return (
     <section id="portfolio">
@@ -41,24 +62,21 @@ export function Portfolio() {
           com a gente.
         </p>
 
-        <fieldset className="portfolio-fieldset">
-          <div className="portfolio-grid" aria-label="Trabalhos e parcerias">
-            {works.map((work) => (
-              <article className="portfolio-card" key={work.image}>
-                <div className="portfolio-cover">
-                  <img src={work.image} alt={`Projeto ${work.title}`} loading="lazy" />
-                </div>
-                <div className="portfolio-body">
-                  <h3>{work.title}</h3>
-                  <p>{work.caption}</p>
-                  <span className="portfolio-badge">
-                    {work.badge === 'parceria' ? '🤝 Parceria' : '✨ Destaque'}
-                  </span>
-                </div>
-              </article>
-            ))}
-          </div>
-        </fieldset>
+        <div className="portfolio-groups">
+          {groups.map((group) => (
+            <fieldset className="portfolio-fieldset portfolio-fieldset--group" key={group.label}>
+              <legend className="portfolio-legend">{group.label}</legend>
+              <div
+                className="portfolio-grid portfolio-grid--group"
+                aria-label={`Projetos: ${group.label}`}
+              >
+                {group.works.map((work) => (
+                  <PortfolioCard work={work} key={work.image} />
+                ))}
+              </div>
+            </fieldset>
+          ))}
+        </div>
       </div>
     </section>
   )
