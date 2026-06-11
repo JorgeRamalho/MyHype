@@ -125,3 +125,10 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 
 - Coluna `enroll-info` centralizada na metade esquerda (`justify-self: center`)
 - Grid da matrícula equilibrado em `1fr / 1fr`
+
+### Fase 18 — Simplificação do cabeçalho
+
+- **Links de navegação removidos**: Início, Categorias, Destaques, Portfólio e Matrícula
+- Header focado apenas na marca e ações do usuário (Entrar e Matricule-se)
+- **Arquivos starfield adicionados**: demo de fundo estrelado em HTML5 puro
+  (`html5/starfield.css`, `html5/starfield.html`, `html5/starfield.js`)
