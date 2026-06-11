@@ -36,9 +36,28 @@ function Save-Resized($size, $name) {
     Write-Host "Gerado: $path ($size x $size)"
 }
 
+function Save-ResizedCircular($size, $name) {
+    $out = [System.Drawing.Bitmap]::new($size, $size, [System.Drawing.Imaging.PixelFormat]::Format32bppArgb)
+    $g = [System.Drawing.Graphics]::FromImage($out)
+    $g.Clear([System.Drawing.Color]::FromArgb(0, 255, 255, 255))
+    $g.InterpolationMode = [System.Drawing.Drawing2D.InterpolationMode]::HighQualityBicubic
+    $g.SmoothingMode = [System.Drawing.Drawing2D.SmoothingMode]::HighQuality
+    $g.PixelOffsetMode = [System.Drawing.Drawing2D.PixelOffsetMode]::HighQuality
+    $g.CompositingQuality = [System.Drawing.Drawing2D.CompositingQuality]::HighQuality
+    $clip = New-Object System.Drawing.Drawing2D.GraphicsPath
+    $clip.AddEllipse(0, 0, $size, $size)
+    $g.SetClip($clip)
+    $g.DrawImage($cropped, -1, -1, $size + 2, $size + 2)
+    $g.Dispose()
+    $path = Join-Path $AssetsDir $name
+    $out.Save($path, [System.Drawing.Imaging.ImageFormat]::Png)
+    $out.Dispose()
+    Write-Host "Gerado: $path ($size x $size, recorte circular)"
+}
+
 Save-Resized 512 'logo-globe-512.png'
 Save-Resized 64 'favicon.png'
-Save-Resized 32 'favicon-32.png'
+Save-ResizedCircular 32 'favicon-32.png'
 
 $cropped.Dispose()
 
