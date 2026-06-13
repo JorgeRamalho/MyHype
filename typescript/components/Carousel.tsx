@@ -35,6 +35,9 @@ export function Carousel() {
             style={{ transform: `translateX(-${current * 100}%)` }}
           >
             {CAROUSEL_SLIDES.map((slide, i) => {
+              const isExternalLink = Boolean(
+                slide.href && !slide.href.startsWith('#'),
+              )
               const content = (
                 <>
                   <img
@@ -62,9 +65,14 @@ export function Carousel() {
                     <a
                       className="carousel-slide-link"
                       href={slide.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`Visitar site da ${slide.title}`}
+                      {...(isExternalLink
+                        ? { target: '_blank', rel: 'noopener noreferrer' }
+                        : {})}
+                      aria-label={
+                        isExternalLink
+                          ? `Visitar site da ${slide.title}`
+                          : `Ir para: ${slide.title}`
+                      }
                     >
                       {content}
                     </a>
