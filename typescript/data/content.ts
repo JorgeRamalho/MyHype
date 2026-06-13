@@ -62,6 +62,13 @@ export const PORTFOLIO_SLIDES: CarouselSlide[] = [
   },
 ]
 
+export const VALENTINES_CAMPAIGN_SLIDE: CarouselSlide = {
+  image: '/carousel-18.png',
+  title: 'Paris com Amor',
+  caption: 'Dia dos Namorados — cadastre-se e concorra a uma viagem para Paris',
+  href: '#matricula',
+}
+
 /** Novos projetos exibidos no carrossel e no segundo bloco do Portfólio. */
 export const CAROUSEL_ONLY_SLIDES: CarouselSlide[] = [
   {
@@ -88,12 +95,14 @@ export const CAROUSEL_ONLY_SLIDES: CarouselSlide[] = [
     caption: 'Economia de verdade — varejo e atacado',
     href: 'https://mercadolar.vercel.app/',
   },
+  VALENTINES_CAMPAIGN_SLIDE,
 ]
 
-/** Todas as fotos do carrossel acima do Hero (parcerias + novos projetos). */
+/** Todas as fotos do carrossel acima do Hero (campanha + parcerias + novos projetos). */
 export const CAROUSEL_SLIDES: CarouselSlide[] = [
+  VALENTINES_CAMPAIGN_SLIDE,
   ...PORTFOLIO_SLIDES,
-  ...CAROUSEL_ONLY_SLIDES,
+  ...CAROUSEL_ONLY_SLIDES.filter((slide) => slide.image !== VALENTINES_CAMPAIGN_SLIDE.image),
 ]
 
 export const CATEGORIES: Category[] = [
