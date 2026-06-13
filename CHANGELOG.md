@@ -171,3 +171,18 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 - Auto Layout Lab restaurado com imagem e link público
 - Tentativa Locar+ revertida por solicitação do usuário
 - CategoryShowcase (fieldset entre Categorias e Destaques) criado e revertido
+
+## [1.5.0] — 2026-06-13
+
+### Fase 24 — Campanha Dia dos Namorados no carrossel
+
+- **Paris com Amor** adicionado como primeiro slide do carrossel (`carousel-18.png`)
+- Legenda: *Dia dos Namorados — cadastre-se e concorra a uma viagem para Paris*
+- Link interno `#matricula` para direcionar o usuário ao formulário de cadastro
+- Slide também incluído no bloco de destaques do Portfólio (`CAROUSEL_ONLY_SLIDES`)
+
+### Fase 25 — Links internos no carrossel
+
+- Slides com âncora (`#...`) navegam na **mesma aba** do site
+- Apenas URLs externas (Vercel/Netlify) abrem em nova aba com `rel="noopener noreferrer"`
+- `aria-label` diferenciado: "Ir para:" (interno) vs "Visitar site da" (externo)
