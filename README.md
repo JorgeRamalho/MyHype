@@ -1,8 +1,8 @@
 📌 # MyHype - Soluções Tecnológicas Ltda
 
-🌐 ## Website Link do projeto online: https:/padocafe-murex.vercel.app
+🌐 ## Website Link do projeto online: https:/my-hype.vercel.app
 
-📂 ## Repositório: https://github.com//JorgeRamalho/Padocafe
+📂 ## Repositório: https://github.com//JorgeRamalho/MyHype
 
 💻 ## Tecnologias
 
