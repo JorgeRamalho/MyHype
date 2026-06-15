@@ -171,3 +171,15 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 - Auto Layout Lab restaurado com imagem e link público
 - Tentativa Locar+ revertida por solicitação do usuário
 - CategoryShowcase (fieldset entre Categorias e Destaques) criado e revertido
+
+## [1.6.0] — 2026-06-15
+
+### Fase 24 — Novos parceiros no carrossel e portfólio
+
+- **ArtMusic** (`carousel-20.png`) — instrumentos premium; link
+  [jorgeramalho.github.io/Artmusic](https://jorgeramalho.github.io/Artmusic/)
+- **Auto Service Mecânica** (`carousel-21.png`) — oficina com cadastro digital;
+  slide no carrossel aguardando URL pública na Vercel
+- **Locar+** (`carousel-19.png`) — locação de veículos; link
+  [locar-three.vercel.app](https://locar-three.vercel.app/)
+- Novo fieldset no portfólio: **Mobilidade & Lifestyle** (5 grupos de 3 cards)

@@ -88,6 +88,23 @@ export const CAROUSEL_ONLY_SLIDES: CarouselSlide[] = [
     caption: 'Economia de verdade — varejo e atacado',
     href: 'https://mercadolar.vercel.app/',
   },
+  {
+    image: '/carousel-20.png',
+    title: 'ArtMusic',
+    caption: 'O som que define você — instrumentos premium',
+    href: 'https://jorgeramalho.github.io/Artmusic/',
+  },
+  {
+    image: '/carousel-21.png',
+    title: 'Auto Service Mecânica',
+    caption: 'Confiança na estrada, precisão na oficina',
+  },
+  {
+    image: '/carousel-19.png',
+    title: 'Locar+',
+    caption: 'Locação de veículos — sua jornada começa aqui',
+    href: 'https://locar-three.vercel.app/',
+  },
 ]
 
 /** Todas as fotos do carrossel acima do Hero (parcerias + novos projetos). */

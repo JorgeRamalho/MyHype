@@ -8,6 +8,7 @@ const PORTFOLIO_GROUPS = [
   'Case de Sucesso',
   'Office Business',
   'Hi-Tech',
+  'Mobilidade & Lifestyle',
 ] as const
 
 const GROUP_SIZE = 3
