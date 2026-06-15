@@ -183,3 +183,10 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 - **Locar+** (`carousel-19.png`) — locação de veículos; link
   [locar-three.vercel.app](https://locar-three.vercel.app/)
 - Novo fieldset no portfólio: **Mobilidade & Lifestyle** (5 grupos de 3 cards)
+
+## [1.7.0] — 2026-06-15
+
+### Fase 25 — Pharmadroga no carrossel
+
+- **Pharmadroga** (`carousel-22.png`) — farmácia com foco em confiança e economia;
+  slide no carrossel com link ao site publicado via Cloudflare Tunnel
