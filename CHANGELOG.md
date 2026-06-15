@@ -186,3 +186,22 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 - Slides com âncora (`#...`) navegam na **mesma aba** do site
 - Apenas URLs externas (Vercel/Netlify) abrem em nova aba com `rel="noopener noreferrer"`
 - `aria-label` diferenciado: "Ir para:" (interno) vs "Visitar site da" (externo)
+
+## [1.6.0] — 2026-06-15
+
+### Fase 26 — Novos parceiros no carrossel e portfólio
+
+- **ArtMusic** (`carousel-20.png`) — instrumentos premium; link
+  [jorgeramalho.github.io/Artmusic](https://jorgeramalho.github.io/Artmusic/)
+- **Auto Service Mecânica** (`carousel-21.png`) — oficina com cadastro digital;
+  slide no carrossel aguardando URL pública na Vercel
+- **Locar+** (`carousel-19.png`) — locação de veículos; link
+  [locar-three.vercel.app](https://locar-three.vercel.app/)
+- Novo fieldset no portfólio: **Mobilidade & Lifestyle** (5 grupos de 3 cards)
+
+## [1.7.0] — 2026-06-15
+
+### Fase 27 — Pharmadroga no carrossel
+
+- **Pharmadroga** (`carousel-22.png`) — farmácia com foco em confiança e economia;
+  slide no carrossel com link ao site publicado via Cloudflare Tunnel
