@@ -105,6 +105,12 @@ export const CAROUSEL_ONLY_SLIDES: CarouselSlide[] = [
     caption: 'Locação de veículos — sua jornada começa aqui',
     href: 'https://locar-three.vercel.app/',
   },
+  {
+    image: '/carousel-22.png',
+    title: 'Pharmadroga',
+    caption: 'Sua saúde merece confiança e economia',
+    href: 'https://the-winning-permit-pharmacology.trycloudflare.com/',
+  },
 ]
 
 /** Todas as fotos do carrossel acima do Hero (parcerias + novos projetos). */
