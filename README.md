@@ -1,4 +1,4 @@
-📌 # MyHype - Soluções Tecnológicas Ltda
+📌 ## MyHype - Soluções Tecnológicas Ltda
 
 🌐 ## Website Link do projeto online: https:/my-hype.vercel.app
 
