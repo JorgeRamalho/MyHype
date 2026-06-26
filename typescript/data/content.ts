@@ -109,7 +109,7 @@ export const CAROUSEL_ONLY_SLIDES: CarouselSlide[] = [
     image: '/carousel-22.png',
     title: 'Pharmadroga',
     caption: 'Sua saúde merece confiança e economia',
-    href: 'https://the-winning-permit-pharmacology.trycloudflare.com/',
+    href: 'https://pharmadroga.vercel.app/',
   },
 ]
 
