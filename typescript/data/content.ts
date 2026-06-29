@@ -106,6 +106,7 @@ export const CAROUSEL_ONLY_SLIDES: CarouselSlide[] = [
     image: '/carousel-21.png',
     title: 'Auto Service Mecânica',
     caption: 'Confiança na estrada, precisão na oficina',
+    href: 'https://autoservicemecanica.netlify.app/',
   },
   {
     image: '/carousel-19.png',
