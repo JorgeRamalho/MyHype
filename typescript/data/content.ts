@@ -122,10 +122,10 @@ export const CAROUSEL_ONLY_SLIDES: CarouselSlide[] = [
   },
 ]
 
-/** Todas as fotos do carrossel acima do Hero (campanha + parcerias + novos projetos). */
+/** Todas as fotos do carrossel acima do Hero (parcerias + campanha + novos projetos). */
 export const CAROUSEL_SLIDES: CarouselSlide[] = [
-  VALENTINES_CAMPAIGN_SLIDE,
   ...PORTFOLIO_SLIDES,
+  VALENTINES_CAMPAIGN_SLIDE,
   ...CAROUSEL_ONLY_SLIDES.filter((slide) => slide.image !== VALENTINES_CAMPAIGN_SLIDE.image),
 ]
 
