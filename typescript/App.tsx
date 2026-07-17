@@ -9,6 +9,7 @@ import { Portfolio } from '@/components/Portfolio'
 import { EnrollSection } from '@/components/EnrollSection'
 import { LoginModal } from '@/components/LoginModal'
 import { Footer } from '@/components/Footer'
+import { BackToTop } from '@/components/BackToTop'
 
 const STORAGE_KEY = 'myhype:users'
 const SESSION_KEY = 'myhype:session'
@@ -69,6 +70,7 @@ export default function App() {
         <EnrollSection onRegister={handleRegister} />
       </main>
       <Footer />
+      <BackToTop />
 
       {loginOpen && (
         <LoginModal
